@@ -1,0 +1,39 @@
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="{% static 'todo/styles.css' %}">
+	<title>Todo List App</title>
+</head>
+<body>
+	<div class="container">
+		<h1>ToDo List</h1>
+		<!-- {% block content %} {% endblock %} -->
+		<form action="/addTodo/" method="post">{% csrf_token %}
+		<div>
+			<label for="item">Add Item</label>
+			<input type="text" name="content">
+			<input type="submit" value="Add Item">
+		</div>
+		</form>
+		<table class="u-full-width">
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>Item</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for post in posts %}
+					<tr>
+						<td>{{ forloop.counter }}</td>
+						<td>{{ post.content }} <a class="button u-pull-right" href="{% url 'delete' post.id %}">X</a></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

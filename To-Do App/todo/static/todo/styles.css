@@ -1,0 +1,23 @@
+.button {
+	margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.u-full-width {
+	width: 80%;
+}
+
+#item-input {
+	width: 40%;
+}
+
+tr {
+	padding: 2px 7px;
+}
+
+h1 {
+	text-align: center;
+}
