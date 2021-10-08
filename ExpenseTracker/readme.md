@@ -10,19 +10,19 @@ Expense tracker build with django rest-api and async javascript with CRUD functi
     - React
 ---
 ### REST API
-**Task-List**
+**Expenses**
 ```
 http://localhost:8000/api/expense-list/
 ```
-**Create-Task**
+**Add-Expense**
 ```
 http://localhost:8000/api/expense-add/
 ```
-**Update-Task**
+**Update-Expense**
 ```
 http://localhost:8000/api/expense-update/<int:pk>/
 ```
-**Delete-Task**
+**Delete-Expense**
 ```
 http://localhost:8000/api/expense-delete/<int:pk>/
 ```
